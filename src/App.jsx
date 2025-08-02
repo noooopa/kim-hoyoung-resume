@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import PersonalStatement from './PersonalStatement'
 import './App.css'
@@ -40,7 +40,7 @@ function Resume() {
       <section className="profile-section">
         <div className="profile-container">
           <div className="profile-image">
-            <img src="/img.jpg" alt="프로필 이미지" />
+            <img src="profile.jpg" alt="프로필 이미지" />
           </div>
           <div className="profile-info">
             <div className="intro-container">

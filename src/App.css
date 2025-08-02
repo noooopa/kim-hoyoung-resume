@@ -544,10 +544,20 @@ body.dark-theme {
   text-decoration: none;
   color: inherit;
   transition: var(--transition);
-  padding: 0.5rem;
+  padding: 0.75rem 1rem;
   border-radius: var(--radius-sm);
   display: inline-block;
   cursor: pointer;
+  background-color: var(--light-bg-tertiary);
+  border: 1px solid var(--light-border);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .intro-link:hover {
@@ -557,8 +567,13 @@ body.dark-theme {
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
+.dark-theme .intro-link {
+  background-color: var(--dark-bg-tertiary);
+  border-color: var(--dark-border);
+}
+
 .dark-theme .intro-link:hover {
-  background-color: var(--dark-bg-tertiary) !important;
+  background-color: var(--dark-bg-secondary) !important;
   color: var(--dark-text-primary) !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
@@ -598,6 +613,11 @@ body.dark-theme {
   
   .profile-info {
     gap: 1rem;
+  }
+  
+  .intro-link {
+    padding: 0.5rem 0.75rem;
+    max-width: 100%;
   }
   
   .intro-link p {
