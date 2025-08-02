@@ -1,92 +1,224 @@
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import PersonalStatement from './PersonalStatement'
 import './App.css'
 
-function App() {
+function Resume() {
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  useEffect(() => {
+    // 로컬 스토리지에서 테마 설정 불러오기
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'dark') {
+      setIsDarkMode(true)
+      document.body.classList.add('dark-theme')
+    } else {
+      document.body.classList.remove('dark-theme')
+    }
+  }, [])
+
+  const toggleTheme = () => {
+    const newTheme = !isDarkMode
+    setIsDarkMode(newTheme)
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light')
+    
+    if (newTheme) {
+      document.body.classList.add('dark-theme')
+    } else {
+      document.body.classList.remove('dark-theme')
+    }
+  }
+
   return (
     <main className="resume-wrapper">
-      {/* header */}
-      <header className="resume-header">
-        <h1>김호영 <span className="tag">1995 Born</span></h1>
-        <div className="contact-line">
-          <span>📞 010-****-6280</span>
-          <span>✉️ gyd******@naver.com</span>
-          <span>🏠 서울 관악구 은성로 16가길</span>
-          <span className="tag">희망 3,200 ~ 3,400 만원</span>
-        </div>
-        <div className="contact-line">
-          {['Vue.js','React','TypeScript','MySQL Workbench','IntelliJ IDEA','VS Code'].map(s=>(
-            <span key={s} className="tag">{s}</span>
-          ))}
-        </div>
-      </header>
+      {/* 테마 토글 버튼 */}
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {isDarkMode ? '☀️' : '🌙'}
+      </button>
 
-      {/* career */}
+      {/* 프로필 이미지와 한줄 자기소개 */}
+      <section className="profile-section">
+        <div className="profile-container">
+          <div className="profile-image">
+            <img src="/img.jpg" alt="프로필 이미지" />
+          </div>
+          <div className="profile-info">
+            <div className="intro-container">
+              <Link to="/statement" className="intro-link">
+                <p><strong>"경험을 중시하는 개발자"</strong> 저의 여정은 아직 진행형입니다.</p>
+              </Link>
+            </div>
+            <div className="contact-info">
+              <p><strong>Name:</strong> 김효영 (Kim Hyo Young)</p>
+              <p><strong>Phone:</strong> 010-9553-6280</p>
+              <p><strong>Email:</strong> gydud1477@naver.com</p>
+              <p><strong>Address:</strong> 서울 관악구 문성로 16가길 50-3</p>
+              <p><strong>GitHub:</strong> <a href="https://github.com/noooopa" target="_blank" rel="noopener noreferrer">github.com/noooopa</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 기술 스택 */}
       <section className="section">
-        <h2 className="section-title">경력 (총 4년 10개월)</h2>
+        <h2 className="section-title">기술 스택</h2>
+        <div className="skills-grid">
+          <div className="skill-item">
+            <div className="skill-icon">⚛️</div>
+            <div className="skill-info">
+              <h5>React</h5>
+              <div className="skill-level">⭐⭐⭐☆☆</div>
+            </div>
+          </div>
+          <div className="skill-item">
+            <div className="skill-icon">💚</div>
+            <div className="skill-info">
+              <h5>Vue.js</h5>
+              <div className="skill-level">⭐⭐☆☆☆</div>
+            </div>
+          </div>
+          <div className="skill-item">
+            <div className="skill-icon">🔷</div>
+            <div className="skill-info">
+              <h5>TypeScript</h5>
+              <div className="skill-level">⭐⭐☆☆☆</div>
+            </div>
+          </div>
+          <div className="skill-item">
+            <div className="skill-icon">🗄️</div>
+            <div className="skill-info">
+              <h5>MySQL</h5>
+              <div className="skill-level">⭐⭐☆☆☆</div>
+            </div>
+          </div>
+          <div className="skill-item">
+            <div className="skill-icon">💻</div>
+            <div className="skill-info">
+              <h5>VS Code</h5>
+              <div className="skill-level">⭐⭐⭐☆☆</div>
+            </div>
+          </div>
+          <div className="skill-item">
+            <div className="skill-icon">🛠️</div>
+            <div className="skill-info">
+              <h5>IntelliJ IDEA</h5>
+              <div className="skill-level">⭐⭐⭐☆☆</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 프로젝트 경험 */}
+      <section className="section">
+        <h2 className="section-title">프로젝트 경험</h2>
+        <div className="projects-grid">
+          <div className="project-card">
+            <h4>Hobbme 취미 공유 웹 사이트</h4>
+            <p><strong>설명:</strong> html과 css를 활용한 반응형 커뮤니티 웹사이트 개발</p>
+            <p><strong>주요 기능:</strong> 회원가입, 로그인, 게시글 작성, 댓글 작성, 좋아요 기능</p>
+            <p><strong>사용 기술:</strong> html, css, javascript</p>
+            <p><strong>담당 역할:</strong> 프론트엔드, 공지사항, 쿠폰기능</p>
+            <p><strong>성과:</strong> 시원한 UI/UX와 반응형 구현, 관리자 쿠폰, 공지사항 기능 구현현</p>
+          </div>
+          <div className="project-card">
+            <h4>WooriZip 인테리어 쇼핑 웹 사이트트</h4>
+            <p><strong>설명:</strong> 인테리어어 경험을 바탕으로 쇼핑, 커뮤니티 웹 사이트 개발</p>
+            <p><strong>주요 기능:</strong> 반응형 웹, 커뮤니티 기능, 쇼핑몰 기능</p>
+            <p><strong>사용 기술:</strong> html, css, javascript</p>
+            <p><strong>담당 역할:</strong> 프론트엔드</p>
+            <p><strong>성과:</strong> 모던한 UI/UX와 반응형 구현</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 경력 */}
+      <section className="section">
+        <h2 className="section-title">경력</h2>
 
         <article className="exp-item">
-          <h3>엘림기전 | 전기설비 — 전기 시공기사</h3>
-          <p className="exp-period">2023.10 ~ 2024.12 (1년 3개월)</p>
+          <h3>엘림기전 | 전기설비</h3>
+          <p className="exp-period">2018.05 ~ 2024.12 (7년 3개월)</p>
           <ul>
-            <li>신축 공장 전력 인입·배선 공사 총괄</li>
-            <li>분전반·제어반 설치 및 안전 점검 → 공사비 5 % 절감</li>
-            <li>CAD 도면·자재 산출 및 팀 조정</li>
+            <li>블로우 장비 배선작업</li>
+            <li>분전반·제어반 배선 및 설치</li>
+            <li>자재관리 및 현장 이슈 조율</li>
           </ul>
         </article>
 
         <article className="exp-item">
-          <h3>엘림기전 | 현장팀 — 전기 시공·유지보수</h3>
-          <p className="exp-period">2018.05 ~ 2022.12 (4년 8개월)</p>
-          <ul>
-            <li>빌딩·오피스텔 전기 설비 시공 50+건 수행</li>
-            <li>PLC 패널 배선·시험 운전, LED 체계 전환</li>
-            <li>현장 안전교육 담당</li>
-          </ul>
-        </article>
-
-        <article className="exp-item">
-          <h3>가이즈건축 — 전기공사 보조</h3>
+          <h3>가이즈건축 | 현장관리</h3>
           <p className="exp-period">2017.10 ~ 2018.04 (7개월)</p>
           <ul>
-            <li>공동주택 분전반 배치·배선 지원</li>
-            <li>전력 사용량 계측 → 효율 3 % 개선</li>
+            <li>호텔 건축건 현장 및 인부 관리</li>
+            <li>식당일정 및 식수 인원 관리</li>
           </ul>
         </article>
       </section>
 
-      {/* education */}
+      {/* 학력 */}
       <section className="section">
         <h2 className="section-title">학력</h2>
         <table className="table">
           <tbody>
             <tr>
-              <th>2011 ~ 2014</th>
-              <td>동아공업고등학교 전기과 졸업</td>
+              <td>2011 ~ 2014</td>
+              <td>동아공업고등학교 자동차과</td>
+              <td>졸업</td>
             </tr>
           </tbody>
         </table>
       </section>
 
-      {/* license */}
+      {/* 자격증 */}
       <section className="section">
         <h2 className="section-title">자격 / 면허 / 수상</h2>
         <table className="table">
           <tbody>
-            <tr><th>2025.04</th><td>2종 소형 운전면허 — 경찰청</td></tr>
-            <tr><th>2015.04</th><td>1종 보통 운전면허 — 경찰청</td></tr>
-            <tr><th>2012.07</th><td>자동차정비기능사 — 한국산업인력공단</td></tr>
-            <tr><th>2010.06</th><td>ITQ 아래한글 A등급 — KPC</td></tr>
-            <tr><th>2010.04</th><td>ITQ 엑셀 A등급 — KPC</td></tr>
-            <tr><th>2010.03</th><td>ITQ 파워포인트 A등급 — KPC</td></tr>
+            <tr>
+              <td>2025.04</td>
+              <td>2종 소형 운전면허</td>
+              <td>경찰청</td>
+            </tr>
+            <tr>
+              <td>2015.04</td>
+              <td>1종 보통 운전면허</td>
+              <td>경찰청</td>
+            </tr>
+            <tr>
+              <td>2012.07</td>
+              <td>자동차정비기능사</td>
+              <td>한국산업인력공단</td>
+            </tr>
+            <tr>
+              <td>2010.06</td>
+              <td>ITQ 아래한글 A등급</td>
+              <td>KPC</td>
+            </tr>
+            <tr>
+              <td>2010.04</td>
+              <td>ITQ 엑셀 A등급</td>
+              <td>KPC</td>
+            </tr>
+            <tr>
+              <td>2010.03</td>
+              <td>ITQ 파워포인트 A등급</td>
+              <td>KPC</td>
+            </tr>
           </tbody>
         </table>
       </section>
-
-      {/* intro */}
-      <section className="section">
-        <h2 className="section-title">한 줄 자기소개</h2>
-        <p><strong>"전기 시공 + 프론트엔드 개발"</strong> 두 분야를 잇는 하이브리드형 인재! 현장 품질 관리부터 React·Vue 기반 시스템 프로토타입까지, 전기와 IT를 연결해 생산성을 끌어올립니다.</p>
-      </section>
     </main>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Resume />} />
+        <Route path="/statement" element={<PersonalStatement />} />
+      </Routes>
+    </Router>
   )
 }
 
