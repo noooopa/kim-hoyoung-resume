@@ -4,7 +4,7 @@ React로 제작된 김호영의 이력서입니다.
 
 ## 🚀 미리보기
 
-[이력서 보기](https://your-username.github.io/kim-hoyoung-resume)
+[이력서 보기](https://noooopa.github.io/kim-hoyoung-resume)
 
 ## 📋 프로젝트 정보
 

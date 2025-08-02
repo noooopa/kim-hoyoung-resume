@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "김호영의 React 이력서",
-  "homepage": "https://your-username.github.io/kim-hoyoung-resume",
+  "homepage": "https://noooopa.github.io/kim-hoyoung-resume",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
