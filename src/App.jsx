@@ -47,6 +47,7 @@ function Resume() {
               <Link to="/statement" className="intro-link">
                 <p><strong>"경험을 중시하는 개발자"</strong> 저의 여정은 아직 진행형입니다.</p>
               </Link>
+              <p className="intro-hint">클릭시 자기소개서로 이동합니다</p>
             </div>
             <div className="contact-info">
               <p><strong>Name:</strong> 김효영 (Kim Hyo Young)</p>

@@ -127,10 +127,18 @@ body.dark-theme {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: flex-start;
 }
 
 .intro-container {
   margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .profile-info h1 {
@@ -553,11 +561,14 @@ body.dark-theme {
   min-height: 44px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  text-align: left;
   width: 100%;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0;
+  align-self: flex-start;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .intro-link:hover {
@@ -583,6 +594,19 @@ body.dark-theme {
   line-height: 1.6;
   margin: 0;
   transition: var(--transition);
+  white-space: nowrap;
+}
+
+.intro-hint {
+  font-size: 0.6rem;
+  color: var(--light-text-secondary);
+  text-align: left;
+  margin-top: 0.5rem;
+  opacity: 0.6;
+}
+
+.dark-theme .intro-hint {
+  color: var(--dark-text-secondary);
 }
 
 /* 반응형 디자인 */
@@ -622,6 +646,11 @@ body.dark-theme {
   
   .intro-link p {
     font-size: 1.1rem;
+  }
+  
+  .intro-hint {
+    font-size: 0.55rem;
+    margin-top: 0.4rem;
   }
   
   .contact-info p {
