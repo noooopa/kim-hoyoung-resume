@@ -564,7 +564,8 @@ body.dark-theme {
   justify-content: flex-start;
   text-align: left;
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
+  min-width: 500px;
   margin: 0;
   align-self: flex-start;
   margin-left: 0;
@@ -598,7 +599,7 @@ body.dark-theme {
 }
 
 .intro-hint {
-  font-size: 0.6rem;
+  font-size: 0.3rem;
   color: var(--light-text-secondary);
   text-align: left;
   margin-top: 0.5rem;
@@ -628,6 +629,7 @@ body.dark-theme {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+    align-items: center;
   }
   
   .profile-image img {
@@ -637,11 +639,16 @@ body.dark-theme {
   
   .profile-info {
     gap: 1rem;
+    align-items: center;
   }
   
   .intro-link {
     padding: 0.5rem 0.75rem;
     max-width: 100%;
+    min-width: 300px;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
   }
   
   .intro-link p {
@@ -649,8 +656,9 @@ body.dark-theme {
   }
   
   .intro-hint {
-    font-size: 0.55rem;
+    font-size: 0.275rem;
     margin-top: 0.4rem;
+    text-align: center;
   }
   
   .contact-info p {
