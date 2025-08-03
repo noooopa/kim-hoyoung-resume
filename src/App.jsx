@@ -2,6 +2,9 @@ import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import PersonalStatement from './PersonalStatement'
 import './App.css'
+// React Icons import
+import { FaReact, FaVuejs, FaJs, FaDatabase, FaCode, FaJava } from 'react-icons/fa'
+import { SiTypescript, SiMysql, SiVisualstudiocode, SiIntellijidea } from 'react-icons/si'
 
 function Resume() {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -65,42 +68,54 @@ function Resume() {
         <h2 className="section-title">기술 스택</h2>
         <div className="skills-grid">
           <div className="skill-item">
-            <div className="skill-icon">⚛️</div>
+            <div className="skill-icon">
+              <FaReact />
+            </div>
             <div className="skill-info">
               <h5>React</h5>
               <div className="skill-level">⭐⭐⭐☆☆</div>
             </div>
           </div>
           <div className="skill-item">
-            <div className="skill-icon">💚</div>
+            <div className="skill-icon">
+              <FaVuejs />
+            </div>
             <div className="skill-info">
               <h5>Vue.js</h5>
               <div className="skill-level">⭐⭐☆☆☆</div>
             </div>
           </div>
           <div className="skill-item">
-            <div className="skill-icon">🔷</div>
+            <div className="skill-icon">
+              <SiTypescript />
+            </div>
             <div className="skill-info">
               <h5>TypeScript</h5>
               <div className="skill-level">⭐⭐☆☆☆</div>
             </div>
           </div>
           <div className="skill-item">
-            <div className="skill-icon">🗄️</div>
+            <div className="skill-icon">
+              <SiMysql />
+            </div>
             <div className="skill-info">
               <h5>MySQL</h5>
               <div className="skill-level">⭐⭐☆☆☆</div>
             </div>
           </div>
           <div className="skill-item">
-            <div className="skill-icon">💻</div>
+            <div className="skill-icon">
+              <SiVisualstudiocode />
+            </div>
             <div className="skill-info">
               <h5>VS Code</h5>
               <div className="skill-level">⭐⭐⭐☆☆</div>
             </div>
           </div>
           <div className="skill-item">
-            <div className="skill-icon">🛠️</div>
+            <div className="skill-icon">
+              <SiIntellijidea />
+            </div>
             <div className="skill-info">
               <h5>IntelliJ IDEA</h5>
               <div className="skill-level">⭐⭐⭐☆☆</div>
@@ -114,19 +129,20 @@ function Resume() {
         <h2 className="section-title">프로젝트 경험</h2>
         <div className="projects-grid">
           <div className="project-card">
-            <h4>Hobbme 취미 공유 웹 사이트</h4>
+            <h4>HobbyMe 취미 공유 웹 사이트</h4>
             <p><strong>설명:</strong> html과 css를 활용한 반응형 커뮤니티 웹사이트 개발</p>
-            <p><strong>주요 기능:</strong> 회원가입, 로그인, 게시글 작성, 댓글 작성, 좋아요 기능</p>
-            <p><strong>사용 기술:</strong> html, css, javascript</p>
-            <p><strong>담당 역할:</strong> 프론트엔드, 공지사항, 쿠폰기능</p>
-            <p><strong>성과:</strong> 시원한 UI/UX와 반응형 구현, 관리자 쿠폰, 공지사항 기능 구현현</p>
+            <p><strong>기능:</strong> 회원가입, 로그인, 게시글 작성, 댓글 작성, 좋아요 기능</p>
+            <p><strong>기술:</strong> html, css, javascript, Bootstrap</p>
+            <p><strong>역할:</strong> 프론트엔드, 공지사항, 쿠폰기능</p>
+            <p><strong>성과:</strong> 반응형 구현, 관리자 쿠폰, 공지사항 기능 구현</p>
           </div>
+
           <div className="project-card">
             <h4>WooriZip 인테리어 쇼핑 웹 사이트트</h4>
             <p><strong>설명:</strong> 인테리어어 경험을 바탕으로 쇼핑, 커뮤니티 웹 사이트 개발</p>
-            <p><strong>주요 기능:</strong> 반응형 웹, 커뮤니티 기능, 쇼핑몰 기능</p>
-            <p><strong>사용 기술:</strong> html, css, javascript</p>
-            <p><strong>담당 역할:</strong> 프론트엔드</p>
+            <p><strong>기능:</strong> 반응형 웹, 커뮤니티 기능, 쇼핑몰 기능</p>
+            <p><strong>기술:</strong> html, css, javascript</p>
+            <p><strong>역할:</strong> 프론트엔드</p>
             <p><strong>성과:</strong> 모던한 UI/UX와 반응형 구현</p>
           </div>
         </div>
@@ -150,8 +166,9 @@ function Resume() {
           <h3>가이즈건축 | 현장관리</h3>
           <p className="exp-period">2017.10 ~ 2018.04 (7개월)</p>
           <ul>
-            <li>호텔 건축건 현장 및 인부 관리</li>
-            <li>식당일정 및 식수 인원 관리</li>
+            <li>호텔 건축 현장 일정 조율</li>
+            <li>공정 별 작업 인원 체크</li>
+            <li>식당 및 식수 인원 관리</li>
           </ul>
         </article>
       </section>
@@ -162,7 +179,7 @@ function Resume() {
         <table className="table">
           <tbody>
             <tr>
-              <td>2011 ~ 2014</td>
+              <td>2010 ~ 2013</td>
               <td>동아공업고등학교 자동차과</td>
               <td>졸업</td>
             </tr>

@@ -270,7 +270,21 @@ body.dark-theme {
   font-size: 32px;
   margin-right: 16px;
   width: 40px;
-  text-align: center;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-text-primary);
+  transition: var(--transition);
+}
+
+.dark-theme .skill-icon {
+  color: var(--dark-text-primary);
+}
+
+.skill-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 .skill-info h5 {
