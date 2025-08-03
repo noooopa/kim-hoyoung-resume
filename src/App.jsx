@@ -5,6 +5,8 @@ import './App.css'
 // React Icons import
 import { FaReact, FaVuejs, FaJs, FaDatabase, FaCode, FaJava } from 'react-icons/fa'
 import { SiTypescript, SiMysql } from 'react-icons/si'
+import { VscCode, VscTerminalBash } from 'react-icons/vsc'
+import { BiCodeAlt } from 'react-icons/bi'
 
 function Resume() {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -105,7 +107,7 @@ function Resume() {
           </div>
           <div className="skill-item">
             <div className="skill-icon">
-              <FaCode />
+              <VscCode />
             </div>
             <div className="skill-info">
               <h5>VS Code</h5>
@@ -114,7 +116,7 @@ function Resume() {
           </div>
           <div className="skill-item">
             <div className="skill-icon">
-              <FaJava />
+              <BiCodeAlt />
             </div>
             <div className="skill-info">
               <h5>IntelliJ IDEA</h5>
