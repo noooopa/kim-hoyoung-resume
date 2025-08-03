@@ -4,7 +4,7 @@ import PersonalStatement from './PersonalStatement'
 import './App.css'
 // React Icons import
 import { FaReact, FaVuejs, FaJs, FaDatabase, FaCode, FaJava } from 'react-icons/fa'
-import { SiTypescript, SiMysql, SiVisualstudiocode, SiIntellijidea } from 'react-icons/si'
+import { SiTypescript, SiMysql } from 'react-icons/si'
 
 function Resume() {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -105,7 +105,7 @@ function Resume() {
           </div>
           <div className="skill-item">
             <div className="skill-icon">
-              <SiVisualstudiocode />
+              <FaCode />
             </div>
             <div className="skill-info">
               <h5>VS Code</h5>
@@ -114,7 +114,7 @@ function Resume() {
           </div>
           <div className="skill-item">
             <div className="skill-icon">
-              <SiIntellijidea />
+              <FaJava />
             </div>
             <div className="skill-info">
               <h5>IntelliJ IDEA</h5>
