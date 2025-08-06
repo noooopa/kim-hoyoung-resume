@@ -56,7 +56,7 @@ function Resume() {
             </div>
             <div className="contact-info">
               <p><strong>Name:</strong> 김효영 (Kim Hyo Young)</p>
-              <p><strong>Phone:</strong> 010-0000-0000</p>
+              <p><strong>Phone:</strong> 010-1234-1234</p>
               <p><strong>Email:</strong> 000001477@naver.com</p>
               <p><strong>Address:</strong> 서울 관악구 ooo 00000</p>
               <p><strong>GitHub:</strong> <a href="https://github.com/noooopa" target="_blank" rel="noopener noreferrer">github.com/ddddddd</a></p>
