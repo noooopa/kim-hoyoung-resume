@@ -56,10 +56,10 @@ function Resume() {
             </div>
             <div className="contact-info">
               <p><strong>Name:</strong> 김효영 (Kim Hyo Young)</p>
-              <p><strong>Phone:</strong> 010-9553-6280</p>
-              <p><strong>Email:</strong> gydud1477@naver.com</p>
-              <p><strong>Address:</strong> 서울 관악구 문성로 16가길 50-3</p>
-              <p><strong>GitHub:</strong> <a href="https://github.com/noooopa" target="_blank" rel="noopener noreferrer">github.com/noooopa</a></p>
+              <p><strong>Phone:</strong> 010-0000-0000</p>
+              <p><strong>Email:</strong> 000001477@naver.com</p>
+              <p><strong>Address:</strong> 서울 관악구 ooo 00000</p>
+              <p><strong>GitHub:</strong> <a href="https://github.com/noooopa" target="_blank" rel="noopener noreferrer">github.com/ddddddd</a></p>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@ function Resume() {
             </div>
             <div className="skill-info">
               <h5>Vue.js</h5>
-              <div className="skill-level">⭐⭐☆☆☆</div>
+              <div className="skill-level">⭐☆☆☆☆</div>
             </div>
           </div>
           <div className="skill-item">

@@ -1,0 +1,5 @@
+[33mc72570c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m VS Code와 IntelliJ 아이콘을 더 적합한 아이콘으로 교체
+[33m614d883[m 아이콘 오류 수정 및 빌드 성공
+[33mdff76db[m 기술 스택 아이콘을 실제 아이콘으로 교체 (React Icons 사용)
+[33m0812fb4[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Fix PC environment box size and improve mobile layout with center alignment
+[33m6aeefe2[m Improve intro link layout: left alignment, single line text, and smaller hint text
