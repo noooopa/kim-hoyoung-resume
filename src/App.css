@@ -76,21 +76,16 @@ body.dark-theme {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   margin-bottom: 0;
   padding: 0;
   flex-wrap: nowrap;
+  flex-direction: row;
 }
 
 
 
-/* 액션 버튼들 컨테이너 */
-.action-buttons {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  flex-wrap: nowrap;
-}
+
 
 /* 테마 토글 버튼 */
 .theme-toggle {

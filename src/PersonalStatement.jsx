@@ -35,9 +35,7 @@ function PersonalStatement() {
     <div className="page-container">
       {/* 상단 버튼 영역 */}
       <div className="top-buttons-container">
-        <div className="action-buttons">
-          <ActionButtons pageType="statement" contentRef={statementRef} />
-        </div>
+        <ActionButtons pageType="statement" contentRef={statementRef} />
         <button className="theme-toggle" onClick={toggleTheme}>
           {isDarkMode ? '☀️' : '🌙'}
         </button>

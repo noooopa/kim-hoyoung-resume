@@ -40,9 +40,7 @@ function Resume() {
     <div className="page-container">
       {/* 상단 버튼 영역 */}
       <div className="top-buttons-container">
-        <div className="action-buttons">
-          <ActionButtons pageType="resume" contentRef={resumeRef} />
-        </div>
+        <ActionButtons pageType="resume" contentRef={resumeRef} />
         <button className="theme-toggle" onClick={toggleTheme}>
           {isDarkMode ? '☀️' : '🌙'}
         </button>

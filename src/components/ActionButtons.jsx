@@ -41,8 +41,6 @@ const ActionButtons = ({ pageType = 'resume', contentRef }) => {
       >
         🖨️ 인쇄
       </button>
-
-
     </>
   )
 }
