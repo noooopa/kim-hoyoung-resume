@@ -74,9 +74,11 @@ body.dark-theme {
   position: relative;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 12px;
   margin-bottom: 20px;
   padding: 0;
+  flex-wrap: nowrap;
 }
 
 
@@ -85,6 +87,8 @@ body.dark-theme {
 .action-buttons {
   display: flex;
   gap: 8px;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 /* 테마 토글 버튼 */
@@ -100,6 +104,7 @@ body.dark-theme {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .dark-theme .theme-toggle {
@@ -125,8 +130,11 @@ body.dark-theme {
   transition: var(--transition);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   color: var(--light-text-primary);
+  white-space: nowrap;
+  min-width: fit-content;
 }
 
 .dark-theme .pdf-button,
