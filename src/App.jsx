@@ -65,7 +65,7 @@ function Resume() {
               <p><strong>Name:</strong> 김효영 (Kim Hyo Young)</p>
               <p><strong>Phone:</strong> 010-9553-6280</p>
               <p><strong>Email:</strong> gydud1477@naver.com</p>
-              <p><strong>Address:</strong> 서울 관악구 문성로로</p>
+              <p><strong>Address:</strong> 서울 관악구 문성로</p>
               <p><strong>GitHub:</strong> <a href="https://github.com/noooopa" target="_blank" rel="noopener noreferrer">github.com/noooopa</a></p>
             </div>
           </div>
