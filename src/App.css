@@ -702,20 +702,15 @@ body.dark-theme {
   /* 모바일에서 버튼 영역 조정 */
   .top-buttons-container {
     margin: 10px;
-    padding: 0;
-    gap: 8px;
+    padding: 6px 10px;
+    gap: 6px;
   }
 
   .pdf-button,
-  .print-button {
+  .print-button,
+  .theme-toggle {
     padding: 6px 12px;
     font-size: 12px;
-  }
-
-  .theme-toggle {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
   }
   
   .section {
