@@ -37,18 +37,17 @@ function Resume() {
   }
 
   return (
-    <>
-      {/* 상단 버튼 영역 */}
-      <div className="top-buttons-container">
-        <div className="action-buttons">
-          <ActionButtons pageType="resume" contentRef={resumeRef} />
-        </div>
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {isDarkMode ? '☀️' : '🌙'}
-        </button>
-      </div>
-
+    <div className="page-container">
       <main className="resume-wrapper" ref={resumeRef}>
+        {/* 상단 버튼 영역 */}
+        <div className="top-buttons-container">
+          <div className="action-buttons">
+            <ActionButtons pageType="resume" contentRef={resumeRef} />
+          </div>
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {isDarkMode ? '☀️' : '🌙'}
+          </button>
+        </div>
 
       {/* 프로필 이미지와 한줄 자기소개 */}
       <section className="profile-section">
@@ -236,8 +235,8 @@ function Resume() {
           </tbody>
         </table>
       </section>
-    </main>
-    </>
+      </main>
+    </div>
   )
 }
 

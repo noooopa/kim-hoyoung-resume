@@ -32,18 +32,17 @@ function PersonalStatement() {
   }
 
   return (
-    <>
-      {/* 상단 버튼 영역 */}
-      <div className="top-buttons-container">
-        <div className="action-buttons">
-          <ActionButtons pageType="statement" contentRef={statementRef} />
-        </div>
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {isDarkMode ? '☀️' : '🌙'}
-        </button>
-      </div>
-
+    <div className="page-container">
       <main className="resume-wrapper" ref={statementRef}>
+        {/* 상단 버튼 영역 */}
+        <div className="top-buttons-container">
+          <div className="action-buttons">
+            <ActionButtons pageType="statement" contentRef={statementRef} />
+          </div>
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {isDarkMode ? '☀️' : '🌙'}
+          </button>
+        </div>
 
       <header className="statement-header">
         <h1>자기소개서</h1>
@@ -118,8 +117,8 @@ function PersonalStatement() {
           <p>이제 그 자산을 기술로 확장해, 사용자의 복잡함을 없애는 경험 중심 서비스를 만들고자 합니다.</p>
         </div>
       </section>
-    </main>
-    </>
+      </main>
+    </div>
   )
 }
 

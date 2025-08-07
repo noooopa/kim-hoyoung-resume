@@ -46,8 +46,6 @@ body.dark-theme {
 }
 
 .resume-wrapper{
-  max-width: 1000px;
-  margin: 80px auto 120px;
   padding: 48px;
   background: var(--light-bg-primary);
   border-radius: var(--radius-lg);
@@ -64,17 +62,23 @@ body.dark-theme {
   border-color: var(--dark-border);
 }
 
+/* 페이지 컨테이너 */
+.page-container {
+  max-width: 1000px;
+  margin: 80px auto 120px;
+  padding: 0 48px;
+}
+
 /* 상단 버튼 영역 컨테이너 */
 .top-buttons-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  position: relative;
   display: flex;
+  justify-content: center;
   gap: 12px;
-  z-index: 1000;
+  margin-bottom: 20px;
+  padding: 16px;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
-  padding: 8px 12px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--light-border);
@@ -691,11 +695,16 @@ body.dark-theme {
     padding: 16px;
   }
 
+  /* 모바일에서 페이지 컨테이너 조정 */
+  .page-container {
+    margin: 20px;
+    padding: 0 24px;
+  }
+
   /* 모바일에서 버튼 영역 조정 */
   .top-buttons-container {
-    top: 10px;
-    right: 10px;
-    padding: 6px 8px;
+    margin: 10px;
+    padding: 12px;
     gap: 8px;
   }
 
