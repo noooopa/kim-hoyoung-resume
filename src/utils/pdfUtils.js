@@ -8,6 +8,9 @@ export const exportToPDF = async (elementRef, filename = 'resume.pdf') => {
     const buttonsToHide = document.querySelectorAll('.theme-toggle, .print-button, .pdf-button')
     buttonsToHide.forEach(btn => btn.style.display = 'none')
 
+    // PDF용 스타일 임시 적용
+    const originalStyles = applyPDFStyles()
+
     // HTML을 캔버스로 변환
     const canvas = await html2canvas(elementRef.current, {
       scale: 2, // 고해상도
@@ -48,6 +51,9 @@ export const exportToPDF = async (elementRef, filename = 'resume.pdf') => {
     // PDF 다운로드
     pdf.save(filename)
 
+    // 원래 스타일 복원
+    restoreOriginalStyles(originalStyles)
+    
     // 숨긴 버튼들을 다시 표시
     buttonsToHide.forEach(btn => btn.style.display = 'flex')
 
@@ -80,13 +86,14 @@ export const addPrintStyles = () => {
         margin: 15mm;
       }
       
-      /* 인쇄 시 숨길 요소들 */
-      .theme-toggle,
-      .print-button,
-      .pdf-button,
-      .back-link {
-        display: none !important;
-      }
+             /* 인쇄 시 숨길 요소들 */
+       .theme-toggle,
+       .print-button,
+       .pdf-button,
+       .back-link,
+       .intro-hint {
+         display: none !important;
+       }
       
       /* 인쇄용 배경색 */
       body {
@@ -170,11 +177,11 @@ export const addPrintStyles = () => {
         height: auto !important;
       }
       
-      /* 링크 인쇄 최적화 */
-      a {
-        color: black !important;
-        text-decoration: underline !important;
-      }
+             /* 링크 인쇄 최적화 */
+       a {
+         color: black !important;
+         text-decoration: none !important;
+       }
       
       /* 페이지 나누기 방지 */
       .profile-section,
@@ -193,6 +200,44 @@ export const addPrintStyles = () => {
     }
   `
   document.head.appendChild(style)
+}
+
+// PDF용 스타일 적용
+const applyPDFStyles = () => {
+  const originalStyles = {}
+  
+  // 인쇄 스타일 적용
+  addPrintStyles()
+  
+  // 추가로 PDF에서 숨길 요소들
+  const elementsToHide = document.querySelectorAll('.intro-hint, .back-link')
+  elementsToHide.forEach(el => {
+    originalStyles[el] = el.style.display
+    el.style.display = 'none'
+  })
+  
+  // 링크 밑줄 제거
+  const links = document.querySelectorAll('a')
+  links.forEach(link => {
+    originalStyles[link] = link.style.textDecoration
+    link.style.textDecoration = 'none'
+  })
+  
+  return originalStyles
+}
+
+// 원래 스타일 복원
+const restoreOriginalStyles = (originalStyles) => {
+  // 인쇄 스타일 제거
+  removePrintStyles()
+  
+  // 숨긴 요소들 복원
+  Object.keys(originalStyles).forEach(element => {
+    if (originalStyles[element] !== undefined) {
+      element.style.display = originalStyles[element]
+      element.style.textDecoration = originalStyles[element]
+    }
+  })
 }
 
 // 인쇄용 CSS 스타일 제거
