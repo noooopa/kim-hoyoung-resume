@@ -32,16 +32,18 @@ function PersonalStatement() {
   }
 
   return (
-    <main className="resume-wrapper" ref={statementRef}>
-      {/* 테마 토글 버튼 */}
-      <button className="theme-toggle" onClick={toggleTheme}>
-        {isDarkMode ? '☀️' : '🌙'}
-      </button>
-
-      {/* 액션 버튼들 */}
-      <div className="action-buttons">
-        <ActionButtons pageType="statement" contentRef={statementRef} />
+    <>
+      {/* 상단 버튼 영역 */}
+      <div className="top-buttons-container">
+        <div className="action-buttons">
+          <ActionButtons pageType="statement" contentRef={statementRef} />
+        </div>
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {isDarkMode ? '☀️' : '🌙'}
+        </button>
       </div>
+
+      <main className="resume-wrapper" ref={statementRef}>
 
       <header className="statement-header">
         <h1>자기소개서</h1>
@@ -117,6 +119,7 @@ function PersonalStatement() {
         </div>
       </section>
     </main>
+    </>
   )
 }
 
