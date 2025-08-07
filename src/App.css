@@ -53,6 +53,7 @@ body.dark-theme {
   position: relative;
   transition: var(--transition);
   border: 1px solid var(--light-border);
+  margin-top: 0;
 }
 
 /* 다크 테마 스타일 */
@@ -65,7 +66,7 @@ body.dark-theme {
 /* 페이지 컨테이너 */
 .page-container {
   max-width: 1000px;
-  margin: 80px auto 120px;
+  margin: 60px auto 120px;
   padding: 0 48px;
 }
 
@@ -76,7 +77,7 @@ body.dark-theme {
   justify-content: flex-end;
   align-items: center;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   padding: 0;
   flex-wrap: nowrap;
 }
