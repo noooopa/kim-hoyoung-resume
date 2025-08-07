@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import ActionButtons from './components/ActionButtons'
 import './App.css'
 import './PersonalStatement.css'
 
 function PersonalStatement() {
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const statementRef = useRef(null)
 
   useEffect(() => {
     // 로컬 스토리지에서 테마 설정 불러오기
@@ -30,11 +32,16 @@ function PersonalStatement() {
   }
 
   return (
-    <main className="resume-wrapper">
+    <main className="resume-wrapper" ref={statementRef}>
       {/* 테마 토글 버튼 */}
       <button className="theme-toggle" onClick={toggleTheme}>
         {isDarkMode ? '☀️' : '🌙'}
       </button>
+
+      {/* 액션 버튼들 */}
+      <div className="action-buttons">
+        <ActionButtons pageType="statement" contentRef={statementRef} />
+      </div>
 
       <header className="statement-header">
         <h1>자기소개서</h1>

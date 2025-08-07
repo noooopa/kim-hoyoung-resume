@@ -1,6 +1,7 @@
 import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import PersonalStatement from './PersonalStatement'
+import ActionButtons from './components/ActionButtons'
 import './App.css'
 // React Icons import
 import { FaReact, FaVuejs, FaJs, FaDatabase, FaCode, FaJava } from 'react-icons/fa'
@@ -10,6 +11,7 @@ import { BiCodeAlt } from 'react-icons/bi'
 
 function Resume() {
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const resumeRef = useRef(null)
 
   useEffect(() => {
     // 로컬 스토리지에서 테마 설정 불러오기
@@ -35,11 +37,16 @@ function Resume() {
   }
 
   return (
-    <main className="resume-wrapper">
+    <main className="resume-wrapper" ref={resumeRef}>
       {/* 테마 토글 버튼 */}
       <button className="theme-toggle" onClick={toggleTheme}>
         {isDarkMode ? '☀️' : '🌙'}
       </button>
+
+      {/* 액션 버튼들 */}
+      <div className="action-buttons">
+        <ActionButtons pageType="resume" contentRef={resumeRef} />
+      </div>
 
       {/* 프로필 이미지와 한줄 자기소개 */}
       <section className="profile-section">
@@ -56,10 +63,10 @@ function Resume() {
             </div>
             <div className="contact-info">
               <p><strong>Name:</strong> 김효영 (Kim Hyo Young)</p>
-              <p><strong>Phone:</strong> 010-1234-1234</p>
-              <p><strong>Email:</strong> 000001477@naver.com</p>
-              <p><strong>Address:</strong> 서울 관악구 ooo 00000</p>
-              <p><strong>GitHub:</strong> <a href="https://github.com/noooopa" target="_blank" rel="noopener noreferrer">github.com/ddddddd</a></p>
+              <p><strong>Phone:</strong> 010-9553-6280</p>
+              <p><strong>Email:</strong> gydud1477@naver.com</p>
+              <p><strong>Address:</strong> 서울 관악구 문성로로</p>
+              <p><strong>GitHub:</strong> <a href="https://github.com/noooopa" target="_blank" rel="noopener noreferrer">github.com/noooopa</a></p>
             </div>
           </div>
         </div>

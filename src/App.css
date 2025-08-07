@@ -64,6 +64,16 @@ body.dark-theme {
   border-color: var(--dark-border);
 }
 
+/* 액션 버튼들 컨테이너 */
+.action-buttons {
+  position: absolute;
+  top: 24px;
+  right: 80px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
 /* 테마 토글 버튼 */
 .theme-toggle {
   position: absolute;
@@ -91,6 +101,43 @@ body.dark-theme {
 .theme-toggle:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* PDF 및 인쇄 버튼 */
+.pdf-button,
+.print-button {
+  background: var(--light-bg-tertiary);
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--light-text-primary);
+}
+
+.dark-theme .pdf-button,
+.dark-theme .print-button {
+  background: var(--dark-bg-tertiary);
+  border-color: var(--dark-border);
+  color: var(--dark-text-primary);
+}
+
+.pdf-button:hover,
+.print-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background: var(--light-accent);
+  color: white;
+}
+
+.dark-theme .pdf-button:hover,
+.dark-theme .print-button:hover {
+  background: var(--dark-accent);
+  color: var(--dark-bg-primary);
 }
 
 /* 프로필 섹션 */
@@ -628,6 +675,28 @@ body.dark-theme {
 @media (max-width: 768px) {
   .resume-wrapper {
     padding: 16px;
+  }
+
+  /* 모바일에서 액션 버튼들 위치 조정 */
+  .action-buttons {
+    position: absolute;
+    top: 16px;
+    right: 60px;
+    gap: 4px;
+  }
+
+  .pdf-button,
+  .print-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .theme-toggle {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
   
   .section {

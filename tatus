@@ -1,3 +1,8 @@
 [33m3fd0666[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m GitHub Pages 라우팅 문제 해결 - 404.html 및 index.html 스크립트 추가
 [33mfcf89bb[m README.md 업데이트 - 요약 및 개인정보 제거
 [33mda778be[m 자기소개서 페이지 완성 - 새로운 내용과 스타일링 적용
+[33mbfc394b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Update resume app with latest changes
+[33mc72570c[m VS Code와 IntelliJ 아이콘을 더 적합한 아이콘으로 교체
+[33m614d883[m 아이콘 오류 수정 및 빌드 성공
+[33mdff76db[m 기술 스택 아이콘을 실제 아이콘으로 교체 (React Icons 사용)
+[33m0812fb4[m Fix PC environment box size and improve mobile layout with center alignment
