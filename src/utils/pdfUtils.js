@@ -11,6 +11,9 @@ export const exportToPDF = async (elementRef, filename = 'resume.pdf') => {
     // PDF용 스타일 임시 적용
     const originalStyles = applyPDFStyles()
 
+    // 잠시 대기하여 스타일이 적용되도록 함
+    await new Promise(resolve => setTimeout(resolve, 100))
+
     // HTML을 캔버스로 변환
     const canvas = await html2canvas(elementRef.current, {
       scale: 2, // 고해상도
@@ -20,7 +23,9 @@ export const exportToPDF = async (elementRef, filename = 'resume.pdf') => {
       width: elementRef.current.scrollWidth,
       height: elementRef.current.scrollHeight,
       scrollX: 0,
-      scrollY: 0
+      scrollY: 0,
+      logging: false,
+      removeContainer: false
     })
 
     // 캔버스를 이미지로 변환
@@ -223,6 +228,38 @@ const applyPDFStyles = () => {
     link.style.textDecoration = 'none'
   })
   
+  // PDF용 추가 스타일 적용
+  const resumeWrapper = document.querySelector('.resume-wrapper')
+  if (resumeWrapper) {
+    originalStyles.resumeWrapper = {
+      background: resumeWrapper.style.background,
+      boxShadow: resumeWrapper.style.boxShadow,
+      border: resumeWrapper.style.border,
+      margin: resumeWrapper.style.margin,
+      padding: resumeWrapper.style.padding,
+      maxWidth: resumeWrapper.style.maxWidth
+    }
+    
+    resumeWrapper.style.background = 'white'
+    resumeWrapper.style.boxShadow = 'none'
+    resumeWrapper.style.border = 'none'
+    resumeWrapper.style.margin = '0'
+    resumeWrapper.style.padding = '20px'
+    resumeWrapper.style.maxWidth = 'none'
+  }
+  
+  // 모든 텍스트를 검은색으로 강제 적용
+  const allTextElements = document.querySelectorAll('*')
+  allTextElements.forEach(el => {
+    if (el.style.color === '') {
+      originalStyles[el] = el.style.color
+      el.style.color = 'black'
+    }
+  })
+  
+  // 다크 테마 강제 해제
+  document.body.classList.remove('dark-theme')
+  
   return originalStyles
 }
 
@@ -233,11 +270,31 @@ const restoreOriginalStyles = (originalStyles) => {
   
   // 숨긴 요소들 복원
   Object.keys(originalStyles).forEach(element => {
-    if (originalStyles[element] !== undefined) {
+    if (originalStyles[element] !== undefined && typeof element === 'object') {
       element.style.display = originalStyles[element]
       element.style.textDecoration = originalStyles[element]
     }
   })
+  
+  // resume-wrapper 스타일 복원
+  if (originalStyles.resumeWrapper) {
+    const resumeWrapper = document.querySelector('.resume-wrapper')
+    if (resumeWrapper) {
+      const styles = originalStyles.resumeWrapper
+      resumeWrapper.style.background = styles.background || ''
+      resumeWrapper.style.boxShadow = styles.boxShadow || ''
+      resumeWrapper.style.border = styles.border || ''
+      resumeWrapper.style.margin = styles.margin || ''
+      resumeWrapper.style.padding = styles.padding || ''
+      resumeWrapper.style.maxWidth = styles.maxWidth || ''
+    }
+  }
+  
+  // 다크 테마 복원 (원래 상태에 따라)
+  const savedTheme = localStorage.getItem('theme')
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme')
+  }
 }
 
 // 인쇄용 CSS 스타일 제거
