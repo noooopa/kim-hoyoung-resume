@@ -33,16 +33,17 @@ function PersonalStatement() {
 
   return (
     <div className="page-container">
-      <main className="resume-wrapper" ref={statementRef}>
-        {/* 상단 버튼 영역 */}
-        <div className="top-buttons-container">
-          <div className="action-buttons">
-            <ActionButtons pageType="statement" contentRef={statementRef} />
-          </div>
-          <button className="theme-toggle" onClick={toggleTheme}>
-            {isDarkMode ? '☀️' : '🌙'}
-          </button>
+      {/* 상단 버튼 영역 */}
+      <div className="top-buttons-container">
+        <div className="action-buttons">
+          <ActionButtons pageType="statement" contentRef={statementRef} />
         </div>
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {isDarkMode ? '☀️' : '🌙'}
+        </button>
+      </div>
+
+      <main className="resume-wrapper" ref={statementRef}>
 
       <header className="statement-header">
         <h1>자기소개서</h1>

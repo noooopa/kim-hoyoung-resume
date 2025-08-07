@@ -38,16 +38,17 @@ function Resume() {
 
   return (
     <div className="page-container">
-      <main className="resume-wrapper" ref={resumeRef}>
-        {/* 상단 버튼 영역 */}
-        <div className="top-buttons-container">
-          <div className="action-buttons">
-            <ActionButtons pageType="resume" contentRef={resumeRef} />
-          </div>
-          <button className="theme-toggle" onClick={toggleTheme}>
-            {isDarkMode ? '☀️' : '🌙'}
-          </button>
+      {/* 상단 버튼 영역 */}
+      <div className="top-buttons-container">
+        <div className="action-buttons">
+          <ActionButtons pageType="resume" contentRef={resumeRef} />
         </div>
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {isDarkMode ? '☀️' : '🌙'}
+        </button>
+      </div>
+
+      <main className="resume-wrapper" ref={resumeRef}>
 
       {/* 프로필 이미지와 한줄 자기소개 */}
       <section className="profile-section">
